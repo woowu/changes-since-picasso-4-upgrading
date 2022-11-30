@@ -1,0 +1,5 @@
+ Product/4_BAL/MBUSPhy/UnitTest/small_MBusPhy_Test.cpp                                                                             |    2 +-
+ Product/5_SVC/P1Task/UnitTest/small_P1Crc_Test.cpp                                                                                |    2 +-
+ Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModemHwController3ph.hpp                                                     |    2 +-
+ Product/7_EXE/E360/Module3/Sources/DebugLogPushSocket/DebugLogPushSocket.cpp                                                      |    2 +-
+ Product/7_EXE/E360/System/App/Sources/ConfigIdentification.hpp                                                                    |    2 +-
