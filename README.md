@@ -10,9 +10,7 @@ Analysis code changes since (including) Picasso-4 upgrading.
 
 ### Change details regarding to changed files
 
-Download <a href="changes-detail.txt">the list file</a> and open it in a text editor.
-
-In the list,
+The report <a href="changes-detail.txt">changes-detail.txt</a> listed changed files in a way described below:
 
 - The changed files are grouped into functional categories.
 - For each changed file, the following information are listed:
