@@ -12,6 +12,15 @@ Analysis code changes since (including) Picasso-4 upgrading.
 
 Download <a href="changes-detail.txt">the list file</a> and open it in a text editor.
 
+In the list,
+
+- The changed files are grouped into functional categories.
+- For each changed file, the following information are listed:
+  - The number of changed lines
+  - The ratio of number of inserted lines and number of deleted lines are indicated by number of symbols '+' and number of symbols '-'
+  - If the change of a file contains one or more TODO marks, the filename will be marked as `filename*`
+  - If a function category contains one or more files which has TODO changes, then the function category itself will be marked as `function-name*`
+
 ## How The Information Produced
 
 ### Scope of change
@@ -47,3 +56,9 @@ git diff --stat=300 -w --diff-filter=dr last-before-picasso-merge \
 ### Produce reports
 
 With all the three data files `Copyright-changes.txt`, `todo-changes.txt` and `changed-source-files.txt` stored in the `data/` directory, running the reporting program `report.js` will produce the mentioned reports.
+
+The following changes are excluded after following the above steps:
+
+- None .cpp or .hpp files
+- Copyright-only changes
+- UnitTest and Mocks files
