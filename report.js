@@ -138,13 +138,15 @@ DiffProcessor.prototype._endGroup = function() {
     const plus = Math.round(this._symbols.plus);
     const minus = Math.round(this._symbols.minus);
 
-    this.groupDetailWs.write(`${this._currentGroup}${this._todoCountInGroup ? '*' : ''} | ${this._nChanges} +${plus},-${minus}\n`);
+    const layer = this._currentGroup.split('/')[0];
+    const func = this._currentGroup.split('/').slice(1).join('/');
+
+    this.groupDetailWs.write(`${layer} ${func}${this._todoCountInGroup ? '*' : ''} | ${this._nChanges} +${plus},-${minus}\n`);
     for (const line of this._fileList)
         this.groupDetailWs.write('    ' + line + '\n');
     this.groupDetailWs.write('\n');
 
-    const layer = this._currentGroup.split('/')[0];
-    this.groupSummaryWs.write(`${this._currentGroup},${layer},${plus},${minus},${this._todoCountInGroup ? 'true' : 'false'}\n`);
+    this.groupSummaryWs.write(`${func},${layer},${plus},${minus},${this._todoCountInGroup ? 'true' : 'false'}\n`);
 
     this._currentGroup = null;
     this._symbols = {
