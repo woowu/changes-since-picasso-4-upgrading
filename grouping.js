@@ -1,5 +1,6 @@
 #!/usr/bin/node --harmony
 import * as fs from 'fs'
+import * as path from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
@@ -8,20 +9,32 @@ function DiffProcessor() {
     this.groupSummaryCsv = null;
     this.groupDetailWs = null;
     this.groupSummaryWs = null;
+    this.copyrightFilename = null;
+    this.changedFilesFilename = null;
+    this.todoFileListFilename = null;
 
     this._currentGroup = null;
     this._symbols = {
         plus: 0,
         minus: 0,
     };
-    this._nChanges = 0;
     this._copyrightList = [];
     this._fileList = [];
+    this._todoFileList = [];
+    this._todoCountInGroup = 0;
+    this._nChanges = 0;
+    this._diffFilesCount = 0;
 }
 
-DiffProcessor.prototype.loadCopyrightList = function(filename) {
+DiffProcessor.prototype.run = async function() {
+    await this._loadCopyrightList();
+    await this._loadTodoFileList();
+    await this._parseDiffFileList();
+}
+
+DiffProcessor.prototype._loadCopyrightList = function() {
     return new Promise((resolve, reject) => {
-        fs.readFile(filename, (err, data) => {
+        fs.readFile(path.join('data', this.copyrightFilename), (err, data) => {
             if (err) return reject(err);
             data.toString().split('\n').forEach(line => {
                 if (! line.trim()) return;
@@ -32,15 +45,30 @@ DiffProcessor.prototype.loadCopyrightList = function(filename) {
     });
 };
 
-DiffProcessor.prototype.parseDiffFileList = function(filename) {
+DiffProcessor.prototype._loadTodoFileList = function() {
     return new Promise((resolve, reject) => {
-        fs.readFile(filename, (err, data) => {
+        fs.readFile(path.join('data', this.todoFileListFilename), (err, data) => {
+            if (err) return reject(err);
+            data.toString().split('\n').forEach(line => {
+                if (! line.trim()) return;
+                this._todoFileList.push(line.trim().split(' ')[0]);
+            });
+            console.log(`${this._todoFileList.length} files in the todo list`);
+            resolve()
+        });
+    });
+};
+
+DiffProcessor.prototype._parseDiffFileList = function() {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path.join('data', this.changedFilesFilename), (err, data) => {
             if (err) return reject(err);
             data.toString().split('\n').forEach(line => {
                 if (! line.trim()) return;
                 this._processDiffLine(line.trim());
             });
             this.end();
+            console.log(`${this._diffFilesCount} files in the diff list`);
             resolve()
         });
     });
@@ -59,8 +87,14 @@ DiffProcessor.prototype._processDiffLine = function(line) {
     if (this._currentGroup == null) this._currentGroup = group;
     if (this._currentGroup != group)
         this._newGroup(group)
+
     this._accumulate({ filename, nChanges: +nChanges, symb });
-    this._fileList.push(line);
+
+    if (this._todoFileList.includes(filename)) {
+        ++this._todoCountInGroup;
+        this._fileList.push(filename + '*' + line.slice(filename.length + 1));
+    } else
+        this._fileList.push(line);
 };
 
 DiffProcessor.prototype._deduceGroupName = function(filename) {
@@ -98,27 +132,28 @@ DiffProcessor.prototype._endGroup = function() {
         this.groupDetailWs = fs.createWriteStream(this.groupDetailFilename);
     if (this.groupSummaryWs == null) {
         this.groupSummaryWs = fs.createWriteStream(this.groupSummaryCsv);
-        this.groupSummaryWs.write(`Group,Layer,Plus,Minus\n`);
+        this.groupSummaryWs.write(`Group,Layer,Plus,Minus,Todo\n`);
     }
 
     const plus = Math.round(this._symbols.plus);
     const minus = Math.round(this._symbols.minus);
 
-    this.groupDetailWs.write(`# ${this._currentGroup}    | ${this._nChanges}    + ${plus} - ${minus}\n`);
+    this.groupDetailWs.write(`${this._currentGroup}${this._todoCountInGroup ? '*' : ''} | ${this._nChanges} +${plus},-${minus}\n`);
     for (const line of this._fileList)
-        this.groupDetailWs.write(line + '\n');
+        this.groupDetailWs.write('    ' + line + '\n');
     this.groupDetailWs.write('\n');
 
     const layer = this._currentGroup.split('/')[0];
-    const group = this._currentGroup.split('/').slice(1).join('/');
-    this.groupSummaryWs.write(`${group},${layer},${plus},${minus}\n`);
+    this.groupSummaryWs.write(`${this._currentGroup},${layer},${plus},${minus},${this._todoCountInGroup ? 'true' : 'false'}\n`);
 
     this._currentGroup = null;
     this._symbols = {
         plus: 0,
         minus: 0,
     };
+    this._todoCountInGroup = 0;
     this._nChanges = 0;
+    this._diffFilesCount += this._fileList.length;
     this._fileList = [];
 };
 
@@ -133,31 +168,20 @@ DiffProcessor.prototype._accumulate = function({ filename, nChanges, symb }) {
 };
 
 const argv = yargs(hideBin(process.argv))
-    .usage('$0 [options] diff-filename-list-file')
+    .usage('$0 [options]')
     .version('0.0.1')
     .help()
-    .option('c', {
-        alias: 'copyright',
-        describe: 'file list of Copyright-only changes',
-        nargs: 1,
-        type: 'string',
-    })
     .argv;
-
-if (argv._.length < 1) {
-    console.error('insufficient positional arguments');
-    process.exit(1);
-}
 
 async function main(argv) {
     const processor = new DiffProcessor();
-    processor.groupDetailFilename = 'group-detail.txt';
-    processor.groupSummaryCsv = 'group-summary.csv';
 
-    if (argv.copyright)
-        await processor.loadCopyrightList(argv.copyright);
-    if (! argv._[0])
-        throw new Error('diff filename list file not provided')
-    await processor.parseDiffFileList(argv._[0]);
+    processor.copyrightFilename = 'Copyright-changes.txt';
+    processor.changedFilesFilename = 'changed-source-files.txt';
+    processor.groupDetailFilename = 'changes-detail.txt';
+    processor.groupSummaryCsv = 'changes-functional-summary.csv';
+    processor.todoFileListFilename = 'todo-changes.txt';
+
+    await processor.run();
 }
 main(argv);
