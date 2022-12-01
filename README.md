@@ -53,7 +53,7 @@ git diff --stat=300 -w --diff-filter=dr last-before-picasso-merge \
 
 ### Produce reports
 
-With all the three data files `Copyright-changes.txt`, `todo-changes.txt` and `changed-source-files.txt` stored in the `data/` directory, running the reporting program `report.js` will produce the mentioned reports.
+With all the three data files `Copyright-changes.txt`, `todo-changes.txt` and `changed-source-files.txt` stored in the `data/` directory, running the reporting program `report.js` followed by `viz.R` will produce the mentioned reports.
 
 The following changes are excluded after following the above steps:
 
