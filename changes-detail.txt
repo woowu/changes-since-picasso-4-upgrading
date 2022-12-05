@@ -1,20 +1,20 @@
-2_RTOS InterModuleCommunication | 6 +6,-0
+2_RTOS/InterModuleCommunication changes 6 (+6 -0) score 0.01
     Product/2_RTOS/InterModuleCommunication/Public/MeterEventIdsAP.hpp                                                      |    6 +
 
-3_HAL Drivers_RX_common | 1214 +1214,-0
+3_HAL/Drivers_RX_common changes 1214 (+1214 -0) score 2.44
     Product/3_HAL/Drivers_RX_common/Sources/RX_66N/Sources/ClockGenerator.cpp                                               |   29 +++
     Product/3_HAL/Drivers_RX_common/Sources/Uart.cpp                                                                        | 1185 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-4_BAL GpioDebugOutput | 123 +123,-0
+4_BAL/GpioDebugOutput changes 123 (+123 -0) score 0.25
     Product/4_BAL/GpioDebugOutput/GpioDebugOutput.hpp                                                                       |  123 ++++++++++
 
-4_BAL Interfaces | 149 +112,-37
+4_BAL/Interfaces changes 149 (+112 -37) score 0.30
     Product/4_BAL/Interfaces/Public/ILTEModemPhyE360.hpp                                                                    |   70 ++++--
     Product/4_BAL/Interfaces/Public/IP1Port.hpp                                                                             |   10 +-
     Product/4_BAL/Interfaces/Public/IRTCBattery.hpp                                                                         |   42 ++++
     Product/4_BAL/Interfaces/Public/IRippleConfig.hpp                                                                       |   27 ++-
 
-4_BAL LTEModemPort* | 1593 +811,-782
+4_BAL/LTEModemPort* changes 1593 (+811 -782) score 23.45
     Product/4_BAL/LTEModemPort/Public/ATcmd.hpp                                                                             |   58 ++++-
     Product/4_BAL/LTEModemPort/Public/ATutils.hpp                                                                           |    1 -
     Product/4_BAL/LTEModemPort/Public/ATutilsBase.hpp                                                                       |    5 +-
@@ -34,17 +34,17 @@
     Product/4_BAL/LTEModemPort/Sources/cmux/LTECMuxHdlc.cpp                                                                 |  523 ++----------------------------------------
     Product/4_BAL/LTEModemPort/Sources/cmux/LTECMuxHdlc.hpp                                                                 |  519 +++++++++++++++++++++++++++++++----------
 
-4_BAL MBUSPhy | 4 +2,-2
+4_BAL/MBUSPhy changes 4 (+2 -2) score 0.01
     Product/4_BAL/MBUSPhy/Sources/MBusPhy.cpp                                                                               |    4 +-
 
-4_BAL MBus | 313 +215,-98
+4_BAL/MBus changes 313 (+215 -98) score 0.63
     Product/4_BAL/MBus/Public/MBusWiredFrameFormatter.hpp                                                                   |    1 +
     Product/4_BAL/MBus/Public/MBusWirelessFrameFormatter.hpp                                                                |  206 +++++++++++------
     Product/4_BAL/MBus/Sources/MBusWiredDriver.cpp                                                                          |    6 +-
     Product/4_BAL/MBus/Sources/MBusWirelessDriver.cpp                                                                       |   32 ++-
     Product/4_BAL/MBus/Sources/MBusWirelessFrameFormatter.cpp                                                               |   68 +++++-
 
-4_BAL MeasurementSystemDriver/IMS | 366 +258,-108
+4_BAL/MeasurementSystemDriver/IMS changes 366 (+258 -108) score 0.73
     Product/4_BAL/MeasurementSystemDriver/IMS/IMS2/Public/Ims1DataReader.hpp                                                |    4 +
     Product/4_BAL/MeasurementSystemDriver/IMS/IMS2/Public/Ims1Driver.hpp                                                    |    9 +-
     Product/4_BAL/MeasurementSystemDriver/IMS/IMS2/Public/Ims1Register.hpp                                                  |    2 +-
@@ -61,31 +61,31 @@
     Product/4_BAL/MeasurementSystemDriver/IMS/Sources/Ims1ProtocolStates.cpp                                                |   67 +++++-
     Product/4_BAL/MeasurementSystemDriver/IMS/Sources/Ims1RawToMeasDataConverter.cpp                                        |    2 +-
 
-4_BAL OptoPortDebug | 3 +2,-2
+4_BAL/OptoPortDebug changes 3 (+2 -2) score 0.00
     Product/4_BAL/OptoPortDebug/Sources/ConfigOptoPort.cpp                                                                  |    3 +-
 
-4_BAL P1Port | 31 +16,-16
+4_BAL/P1Port changes 31 (+16 -16) score 0.06
     Product/4_BAL/P1Port/Public/P1Port.hpp                                                                                  |   15 +-
     Product/4_BAL/P1Port/Sources/P1Port.cpp                                                                                 |   16 +-
 
-4_BAL RTCBattery | 115 +115,-0
+4_BAL/RTCBattery changes 115 (+115 -0) score 0.23
     Product/4_BAL/RTCBattery/Public/RTCBattery.hpp                                                                          |   62 +++++
     Product/4_BAL/RTCBattery/Sources/RTCBattery.cpp                                                                         |   53 +++++
 
-4_BAL SCSPhy | 1 +1,-0
+4_BAL/SCSPhy changes 1 (+1 -0) score 0.00
     Product/4_BAL/SCSPhy/Sources/ScsFeedback.cpp                                                                            |    1 +
 
-4_BAL SerialPort | 2 +1,-1
+4_BAL/SerialPort changes 2 (+1 -1) score 0.00
     Product/4_BAL/SerialPort/Sources/SerialPort.cpp                                                                         |    2 +-
 
-4_BAL SysPerf | 89 +89,-0
+4_BAL/SysPerf changes 89 (+89 -0) score 0.18
     Product/4_BAL/SysPerf/Public/SysPerfObserver.hpp                                                                        |   56 +++++
     Product/4_BAL/SysPerf/Sources/SysPerfObserver.cpp                                                                       |   33 +++
 
-4_BAL WMBUSPhy | 4 +2,-2
+4_BAL/WMBUSPhy changes 4 (+2 -2) score 0.01
     Product/4_BAL/WMBUSPhy/Sources/WMBusPhy.cpp                                                                             |    4 +-
 
-5_SVC CMSupervision | 1231 +1225,-7
+5_SVC/CMSupervision changes 1231 (+1225 -7) score 2.48
     Product/5_SVC/CMSupervision/Public/CMConnectionSupervision.hpp                                                          |    4 +-
     Product/5_SVC/CMSupervision/Public/CmcmMessage.hpp                                                                      |   58 +++++
     Product/5_SVC/CMSupervision/Public/CmcmMessageChannel.hpp                                                               |   42 ++++
@@ -101,18 +101,18 @@
     Product/5_SVC/CMSupervision/Sources/CmcmStateMachine.cpp                                                                |  216 +++++++++++++++++
     Product/5_SVC/CMSupervision/Sources/CmcmTxStateMachine.cpp                                                              |  231 +++++++++++++++++++
 
-5_SVC DLMS | 2 +1,-1
+5_SVC/DLMS changes 2 (+1 -1) score 0.00
     Product/5_SVC/DLMS/Public/PushServiceSynchronizerEventNotification.hpp                                                  |    2 +-
 
-5_SVC DataModel | 206 +206,-0
+5_SVC/DataModel changes 206 (+206 -0) score 0.41
     Product/5_SVC/DataModel/Public/DataModelAttributeAccessor_E360.hpp                                                      |   79 +++++++
     Product/5_SVC/DataModel/Public/DataModelAttributeArrayAccessor_E360.hpp                                                 |  127 ++++++++++
 
-5_SVC DigitalOutputLC | 5 +4,-2
+5_SVC/DigitalOutputLC changes 5 (+4 -2) score 0.01
     Product/5_SVC/DigitalOutputLC/Public/LcDisplayController.hpp                                                            |    2 +
     Product/5_SVC/DigitalOutputLC/Sources/LcDisplayController.cpp                                                           |    3 +-
 
-5_SVC DisplayLib* | 239 +120,-119
+5_SVC/DisplayLib* changes 239 (+120 -119) score 8.56
     Product/5_SVC/DisplayLib/Segmented/Public/DisplayIconArbitratorST.hpp                                                   |    9 +-
     Product/5_SVC/DisplayLib/Segmented/Public/DisplayTemplateST.hpp                                                         |    3 +-
     Product/5_SVC/DisplayLib/Segmented/Sources/DisplayIconsArbitratorST.cpp*                                                |   14 +-
@@ -128,11 +128,11 @@
     Product/5_SVC/DisplayLib/Wrapper/Sitronix/Sources/ST7025SegmentedLib.cpp                                                |    6 +
     Product/5_SVC/DisplayLib/Wrapper/Sources/SegmentedDisplay.cpp                                                           |    6 +-
 
-5_SVC ImageTransferStorageLayout | 26 +13,-13
+5_SVC/ImageTransferStorageLayout changes 26 (+13 -13) score 0.05
     Product/5_SVC/ImageTransferStorageLayout/Public/ImageTransferStorageLayout.hpp                                          |    6 +-
     Product/5_SVC/ImageTransferStorageLayout/Sources/ImageTransferStorageLayout.cpp                                         |   20 +-
 
-5_SVC Interfaces | 230 +188,-42
+5_SVC/Interfaces changes 230 (+188 -42) score 0.46
     Product/5_SVC/Interfaces/Public/ILTEServerSocket.hpp                                                                    |   11 +-
     Product/5_SVC/Interfaces/Public/IMBusCommChannel.hpp                                                                    |   13 +-
     Product/5_SVC/Interfaces/Public/IMBusCommunicator.hpp                                                                   |   18 +-
@@ -142,7 +142,7 @@
     Product/5_SVC/Interfaces/Public/LTE.hpp                                                                                 |   68 ++++++
     Product/5_SVC/Interfaces/Public/MBusConfigs.hpp                                                                         |   50 ++++
 
-5_SVC LTEModemTask | 1397 +1291,-106
+5_SVC/LTEModemTask changes 1397 (+1291 -106) score 5.70
     Product/5_SVC/LTEModemTask/Public/HttpsCertificateParser.hpp                                                            |   67 ++++++
     Product/5_SVC/LTEModemTask/Public/LTEConnControllerTask.hpp                                                             |   10 +-
     Product/5_SVC/LTEModemTask/Public/LTEModemDataTask.hpp                                                                  |    2 +-
@@ -168,43 +168,43 @@
     Product/5_SVC/LTEModemTask/Sources/hw/LTEScapChargeOnOffControl.cpp                                                     |   14 +-
     Product/5_SVC/LTEModemTask/Sources/hw/LTETempCompensate3ph.cpp                                                          |   35 ++-
 
-5_SVC LTESocket* | 151 +105,-46
+5_SVC/LTESocket* changes 151 (+105 -46) score 4.05
     Product/5_SVC/LTESocket/Public/LTESocket.hpp                                                                            |   22 +-
     Product/5_SVC/LTESocket/Sources/LTESocket.cpp*                                                                          |  129 ++++++++---
 
-5_SVC P1Task/Common | 542 +542,-0
+5_SVC/P1Task/Common changes 542 (+542 -0) score 1.09
     Product/5_SVC/P1Task/Common/Public/HdlcPushSocketIO.hpp                                                                 |   81 +++++++
     Product/5_SVC/P1Task/Common/Public/P1ProfileConfig.hpp                                                                  |  140 +++++++++++
     Product/5_SVC/P1Task/Common/Public/P1ProfileSelectiveAccess.hpp                                                         |  154 +++++++++++++
     Product/5_SVC/P1Task/Common/Sources/HdlcPushSocketIO.cpp                                                                |  114 +++++++++
     Product/5_SVC/P1Task/Common/Sources/P1CrcCheck.cpp                                                                      |   53 +++++
 
-5_SVC P1Task/FLVObjectModel | 928 +928,-0
+5_SVC/P1Task/FLVObjectModel changes 928 (+928 -0) score 1.87
     Product/5_SVC/P1Task/FLVObjectModel/Public/P1DataAccessor.hpp                                                           |  120 ++++++++++
     Product/5_SVC/P1Task/FLVObjectModel/Public/P1Processor.hpp                                                              |  151 ++++++++++++
     Product/5_SVC/P1Task/FLVObjectModel/Sources/P1DataAccessor.cpp                                                          |  266 +++++++++++++++++++++
     Product/5_SVC/P1Task/FLVObjectModel/Sources/P1Processor.cpp                                                             |  391 +++++++++++++++++++++++++++++++
 
-5_SVC PowerState | 9 +5,-4
+5_SVC/PowerState changes 9 (+5 -4) score 0.02
     Product/5_SVC/PowerState/Public/PowerContextMasterE355.hpp                                                              |    6 +-
     Product/5_SVC/PowerState/Sources/PowerContextMasterE355.cpp                                                             |    2 +-
     Product/5_SVC/PowerState/Sources/PowerStateMasterInfrastructureReadyE355.cpp                                            |    1 +
 
-5_SVC ProductionData | 97 +76,-21
+5_SVC/ProductionData changes 97 (+76 -21) score 0.19
     Product/5_SVC/ProductionData/Public/ProductionDataAccess.hpp                                                            |   28 ++-
     Product/5_SVC/ProductionData/Sources/ProductionDataAccess.cpp                                                           |   69 +++++-
 
-5_SVC RTCBattery | 89 +89,-0
+5_SVC/RTCBattery changes 89 (+89 -0) score 0.18
     Product/5_SVC/RTCBattery/Public/RTCBatteryFunctor.hpp                                                                   |   50 ++++
     Product/5_SVC/RTCBattery/Sources/RTCBatteryFunctor.cpp                                                                  |   39 ++++
 
-5_SVC SupplyControlSwitch | 10 +6,-4
+5_SVC/SupplyControlSwitch changes 10 (+6 -4) score 0.02
     Product/5_SVC/SupplyControlSwitch/Public/SCSMonitorEventHandler.hpp                                                     |    2 +-
     Product/5_SVC/SupplyControlSwitch/Sources/ScsManager.cpp                                                                |    2 +
     Product/5_SVC/SupplyControlSwitch/Sources/ScsStateDisconnect.cpp                                                        |    4 +-
     Product/5_SVC/SupplyControlSwitch/Sources/ScsTemperature.cpp                                                            |    2 +-
 
-5_SVC UartComms | 1133 +1114,-19
+5_SVC/UartComms changes 1133 (+1114 -19) score 2.28
     Product/5_SVC/UartComms/Public/UartComms.hpp                                                                            |   26 ++-
     Product/5_SVC/UartComms/Public/UartTcpWrapperLinkLayer.hpp                                                              |  153 +++++++++++++
     Product/5_SVC/UartComms/Public/UartTcpWrapperSessionManager.hpp                                                         |  137 +++++++++++
@@ -212,10 +212,10 @@
     Product/5_SVC/UartComms/Sources/UartTcpWrapperLinkLayer.cpp                                                             |  354 ++++++++++++++++++++++++++++
     Product/5_SVC/UartComms/Sources/UartTcpWrapperSessionManager.cpp                                                        |  423 ++++++++++++++++++++++++++++++++++
 
-5_SVC WMBUS | 2 +1,-1
+5_SVC/WMBUS changes 2 (+1 -1) score 0.00
     Product/5_SVC/WMBUS/Sources/XModem.cpp                                                                                  |    2 +-
 
-6_APP CommandProcessor | 39 +27,-13
+6_APP/CommandProcessor changes 39 (+27 -13) score 0.08
     Product/6_APP/CommandProcessor/Public/CommandDispatcher.hpp                                                             |    3 +
     Product/6_APP/CommandProcessor/Public/CommandDispatcherScheduler.hpp                                                    |    2 +-
     Product/6_APP/CommandProcessor/Public/CommandProcessorData.hpp                                                          |    3 +
@@ -227,14 +227,14 @@
     Product/6_APP/CommandProcessor/Sources/LoadControlStateMachine.cpp                                                      |    2 +
     Product/6_APP/CommandProcessor/Sources/PriorityTable.cpp                                                                |    2 +
 
-6_APP Config | 14 +7,-7
+6_APP/Config changes 14 (+7 -7) score 0.03
     Product/6_APP/Config/Public/ConfigDlmsStreamBuffers.hpp                                                                 |   14 +-
 
-6_APP ConfigUsbApp | 15 +7,-9
+6_APP/ConfigUsbApp changes 15 (+7 -9) score 8.69
     Product/6_APP/ConfigUsbApp/Public/ConfigUsbApp.hpp                                                                      |    2 -
     Product/6_APP/ConfigUsbApp/Sources/ConfigUsbApp.cpp                                                                     |   13 +-
 
-6_APP Cosem/Classes* | 4834 +2015,-2819
+6_APP/Cosem/Classes* changes 4834 (+2015 -2819) score 53.48
     Product/6_APP/Cosem/Classes/Public/CosemAttributeArrayLongReadWrite.hpp                                                 |    8 +-
     Product/6_APP/Cosem/Classes/Public/CosemAttributeBoolean_AP.hpp                                                         |    4 +-
     Product/6_APP/Cosem/Classes/Public/CosemClass_19_1_0_22086.hpp                                                          |   10 +-
@@ -319,7 +319,7 @@
     Product/6_APP/Cosem/Classes/Sources/CosemClass_71_0_1_22088.cpp                                                         |   12 +-
     Product/6_APP/Cosem/Classes/Sources/CosemClass_7_1_3_22006.cpp*                                                         |  872 ++++++---------------------------------------------------------------
 
-6_APP Cosem/DataInterface* | 877 +771,-107
+6_APP/Cosem/DataInterface* changes 877 (+771 -107) score 8.40
     Product/6_APP/Cosem/DataInterface/Public/ConfigIdentificationInterface.hpp                                              |    6 +-
     Product/6_APP/Cosem/DataInterface/Public/CosemClassDataInterfaceToAttributeLcApplianceOutputFunction.hpp                |   59 +++++
     Product/6_APP/Cosem/DataInterface/Public/CosemClassDataInterfaceToAttributeLcAppliancePowerDownState.hpp                |   61 +++++
@@ -337,7 +337,7 @@
     Product/6_APP/Cosem/DataInterface/Sources/CosemClassDataInterfaceToAttributeOutputState_LC.cpp                          |   20 +-
     Product/6_APP/Cosem/DataInterface/Sources/CosemClassDataInterfaceToParameterisationId.cpp                               |   16 +-
 
-6_APP DataMigration | 215 +116,-99
+6_APP/DataMigration changes 215 (+116 -99) score 0.43
     Product/6_APP/DataMigration/Public/DataMigratorAccessRights.hpp                                                         |    6 +-
     Product/6_APP/DataMigration/Public/DataMigratorCommsSpeed.hpp                                                           |    3 +
     Product/6_APP/DataMigration/Public/DataMigratorModemInitString.hpp                                                      |    2 +
@@ -352,7 +352,7 @@
     Product/6_APP/DataMigration/Sources/DataMigratorPowerDownState.cpp                                                      |    9 +-
     Product/6_APP/DataMigration/Sources/DataMigratorSGL.cpp                                                                 |   65 +++---
 
-6_APP DisplayApp* | 856 +490,-366
+6_APP/DisplayApp* changes 856 (+490 -366) score 16.18
     Product/6_APP/DisplayApp/Public/DisplayDataDisplayMenu_AP.hpp                                                           |    2 +
     Product/6_APP/DisplayApp/Public/DisplayListMBusChannelSubMenu.hpp                                                       |   11 +
     Product/6_APP/DisplayApp/Public/DisplayMBusSetWiredMbusSubMenu.hpp                                                      |    5 +-
@@ -382,10 +382,10 @@
     Product/6_APP/DisplayApp/Sources/DisplaySubmenuFactory.cpp                                                              |  136 ++---------
     Product/6_APP/DisplayApp/Sources/SegmentedDisplayStateManager.cpp                                                       |   23 +-
 
-6_APP E360/Demo | 4 +2,-2
+6_APP/E360/Demo changes 4 (+2 -2) score 0.01
     Product/6_APP/E360/Demo/Public/EventDemoHandler.hpp                                                                     |    4 +-
 
-6_APP EventHandling | 178 +102,-76
+6_APP/EventHandling changes 178 (+102 -76) score 0.36
     Product/6_APP/EventHandling/Public/AntennaToggleEventHandler_E360.hpp                                                   |    4 +-
     Product/6_APP/EventHandling/Public/BoostToggleEventHandler.hpp                                                          |    2 +-
     Product/6_APP/EventHandling/Public/DigitalOutputDisplayPowerUpEventHandler.hpp                                          |   14 +-
@@ -405,12 +405,12 @@
     Product/6_APP/EventHandling/Sources/PushAutoInstEventHandler.cpp                                                        |   18 +-
     Product/6_APP/EventHandling/Sources/RandomizationPowerUpEventHandler.cpp                                                |    6 +-
 
-6_APP ImageTransfer | 78 +37,-41
+6_APP/ImageTransfer changes 78 (+37 -41) score 3.04
     Product/6_APP/ImageTransfer/Public/FirmwareModuleChecker.hpp                                                            |   27 ++-
     Product/6_APP/ImageTransfer/Sources/FirmwareModuleChecker.cpp                                                           |   38 +--
     Product/6_APP/ImageTransfer/Sources/FirmwareUpgradeArrayInitializer.cpp                                                 |   13 +-
 
-6_APP Interfaces* | 1421 +1237,-184
+6_APP/Interfaces* changes 1421 (+1237 -184) score 13.25
     Product/6_APP/Interfaces/Public/IBatteryDataAccess.hpp                                                                  |    2 +-
     Product/6_APP/Interfaces/Public/IConfigLoadControlFunctions.hpp                                                         |    1 +
     Product/6_APP/Interfaces/Public/IMBusAppAccess.hpp*                                                                     |  393 ++++++++++++++++++++++++++-----
@@ -433,7 +433,7 @@
     Product/6_APP/Interfaces/Public/ITransceiverControl.hpp                                                                 |   36 +++
     Product/6_APP/Interfaces/Public/IVisualIndicationAccessor.hpp                                                           |    6 +-
 
-6_APP MBus/MBus_Common* | 5938 +5938,-0
+6_APP/MBus/MBus_Common* changes 5938 (+5938 -0) score 26.95
     Product/6_APP/MBus/MBus_Common/Public/MBusDisconnectorAttributeAccessor.hpp                                             |   65 ++++++
     Product/6_APP/MBus/MBus_Common/Public/MBusDisonnectorStateDisconnect.hpp                                                |   64 ++++++
     Product/6_APP/MBus/MBus_Common/Public/MBusDisonnectorStateReconnect.hpp                                                 |   65 ++++++
@@ -453,7 +453,7 @@
     Product/6_APP/MBus/MBus_Common/Sources/MBusWirelessMessages.cpp*                                                        | 2165 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     Product/6_APP/MBus/MBus_Common/Sources/WMBusSlaveDeviceFUPCallBack.cpp*                                                 |  135 +++++++++++
 
-6_APP MBus/MBus_Fluvius* | 2500 +2500,-0
+6_APP/MBus/MBus_Fluvius* changes 2500 (+2500 -0) score 27.53
     Product/6_APP/MBus/MBus_Fluvius/Public/MBusAttributeAccessor.hpp                                                        |  203 ++++++++++++++++
     Product/6_APP/MBus/MBus_Fluvius/Public/MBusConfigs.hpp                                                                  |   50 ++++
     Product/6_APP/MBus/MBus_Fluvius/Public/MBusInterModuleAccessFluv.hpp                                                    |   57 +++++
@@ -482,20 +482,20 @@
     Product/6_APP/MBus/MBus_Fluvius/Sources/MBusSlaveImageVerOperationHandler.cpp*                                          |   49 ++++
     Product/6_APP/MBus/MBus_Fluvius/Sources/MBusWirelessEventHandlerFlv.cpp                                                 |   41 ++++
 
-6_APP MBus/MBus_Generic | 149 +149,-0
+6_APP/MBus/MBus_Generic changes 149 (+149 -0) score 0.30
     Product/6_APP/MBus/MBus_Generic/Public/MBusAppEventHandlerOpWaitTimeout.hpp                                             |   41 ++++
     Product/6_APP/MBus/MBus_Generic/Public/MBusAttributeAccessor.hpp                                                        |   41 ++++
     Product/6_APP/MBus/MBus_Generic/Public/MBusConfigs.hpp                                                                  |   40 ++++
     Product/6_APP/MBus/MBus_Generic/Sources/MBusAttributeAccessor.cpp                                                       |   27 +++
 
-6_APP Ntp/AppFLV | 183 +183,-0
+6_APP/Ntp/AppFLV changes 183 (+183 -0) score 0.37
     Product/6_APP/Ntp/AppFLV/Public/NtpBackgroundTaskFLV.hpp                                                                |   63 +++++
     Product/6_APP/Ntp/AppFLV/Sources/NtpBackgroundTaskFLV.cpp                                                               |  120 ++++++++++
 
-6_APP ProductionTestApp/1_Phase | 2 +1,-1
+6_APP/ProductionTestApp/1_Phase changes 2 (+1 -1) score 0.00
     Product/6_APP/ProductionTestApp/1_Phase/Sources/scpi_MMI3Interface.cpp                                                  |    2 +-
 
-6_APP ProductionTestApp/3_Phase* | 561 +322,-239
+6_APP/ProductionTestApp/3_Phase* changes 561 (+322 -239) score 8.63
     Product/6_APP/ProductionTestApp/3_Phase/Sources/NeutralCurrentMeasurementTest.cpp                                       |    6 +-
     Product/6_APP/ProductionTestApp/3_Phase/Sources/scpi_Commands.cpp*                                                      |   11 +-
     Product/6_APP/ProductionTestApp/3_Phase/Sources/scpi_DisplayInterface.cpp                                               |   46 +++-
@@ -507,7 +507,7 @@
     Product/6_APP/ProductionTestApp/3_Phase/Sources/scpi_TamperDetectionInterface.hpp                                       |    4 +-
     Product/6_APP/ProductionTestApp/3_Phase/Sources/scpi_VangoInterface.cpp                                                 |   91 +++++---
 
-6_APP ProductionTestApp* | 1783 +1436,-347
+6_APP/ProductionTestApp* changes 1783 (+1436 -347) score 66.87
     Product/6_APP/ProductionTestApp/Public/FlashTask.hpp                                                                    |    8 +-
     Product/6_APP/ProductionTestApp/Public/IPtaMainTaskDataAccess.hpp                                                       |  135 +++++++++++
     Product/6_APP/ProductionTestApp/Public/IPulseOutputCreepStateMode.hpp                                                   |    4 +-
@@ -569,7 +569,7 @@
     Product/6_APP/ProductionTestApp/Sources/scpi_SystemInterface.hpp                                                        |    5 +-
     Product/6_APP/ProductionTestApp/Sources/scpi_WMBUSInterface.cpp                                                         |    3 +-
 
-6_APP RemoteCallHandlersCommon | 838 +531,-307
+6_APP/RemoteCallHandlersCommon changes 838 (+531 -307) score 4.57
     Product/6_APP/RemoteCallHandlersCommon/Public/ConsumerMessageRemoteCallHandler.hpp                                      |    2 +-
     Product/6_APP/RemoteCallHandlersCommon/Public/CosemDataDetailsLookUp.hpp                                                |    4 +-
     Product/6_APP/RemoteCallHandlersCommon/Public/CosemDataLookUp.hpp                                                       |    4 +-
@@ -612,7 +612,7 @@
     Product/6_APP/RemoteCallHandlersCommon/Sources/ScsRemoteCallHandlers.cpp                                                |   65 ++++--
     Product/6_APP/RemoteCallHandlersCommon/Sources/ScsTemperatureRemoteCallHandler.cpp                                      |   16 +-
 
-6_APP Schedulers* | 846 +454,-392
+6_APP/Schedulers* changes 846 (+454 -392) score 17.21
     Product/6_APP/Schedulers/Public/ActivityCalendarScheduler_AP.hpp                                                        |   62 +++--
     Product/6_APP/Schedulers/Public/ActivityCalendarScheduler_AP_Base.hpp                                                   |   73 +++---
     Product/6_APP/Schedulers/Public/LoadControlSwitchingTimeHelper.hpp                                                      |    9 +-
@@ -622,7 +622,7 @@
     Product/6_APP/Schedulers/Sources/LoadControlSwitchingTimeHelper.cpp                                                     |   34 +--
     Product/6_APP/Schedulers/Sources/RateSwitchingTimeHelper_Base.cpp*                                                      |  286 ++++++++++++-----------
 
-6_APP SelfTest | 75 +38,-38
+6_APP/SelfTest changes 75 (+38 -38) score 0.15
     Product/6_APP/SelfTest/Public/ExternalFlashMemoryErrorTest.hpp                                                          |    2 +-
     Product/6_APP/SelfTest/Public/SelfTestBackGroundFunctor.hpp                                                             |    7 +-
     Product/6_APP/SelfTest/Sources/BackUpModuleCrcVerification.cpp                                                          |   14 +-
@@ -632,7 +632,7 @@
     Product/6_APP/SelfTest/Sources/SelfTestBackGroundFunctorModule.cpp                                                      |   17 +-
     Product/6_APP/SelfTest/Sources/SelfTestProfileCRCValidateAlgo.cpp                                                       |    6 +-
 
-6_APP VisualIndication | 1363 +1303,-60
+6_APP/VisualIndication changes 1363 (+1303 -60) score 4.47
     Product/6_APP/VisualIndication/Public/IconVisualIndicationFlv.hpp                                                       |  179 +++++++++++++++
     Product/6_APP/VisualIndication/Public/LedVisualIndicationFlv.hpp                                                        |  163 +++++++++++++
     Product/6_APP/VisualIndication/Public/VisualIndicationEventHandler.hpp                                                  |    4 +-
@@ -645,26 +645,26 @@
     Product/6_APP/VisualIndication/Sources/VisualIndicationIconData.cpp                                                     |    8 +-
     Product/6_APP/VisualIndication/Sources/VisualIndicationLedData.cpp                                                      |    8 +-
 
-7_EXE E3551Ph/Common/RemoteMethodInvocation | 3 +2,-2
+7_EXE/E3551Ph/Common/RemoteMethodInvocation changes 3 (+2 -2) score 0.00
     Product/7_EXE/E3551Ph/Common/RemoteMethodInvocation/Public/RemoteMethodInvocationMethodIds.hpp                          |    3 +-
 
-7_EXE E3551Ph/Common/RemotePeripherals | 2 +2,-0
+7_EXE/E3551Ph/Common/RemotePeripherals changes 2 (+2 -0) score 0.00
     Product/7_EXE/E3551Ph/Common/RemotePeripherals/Public/ConfigRemotePeripheralAssignment.hpp                              |    2 +
 
-7_EXE E3553Ph/Common/RemoteMethodInvocation | 10 +5,-5
+7_EXE/E3553Ph/Common/RemoteMethodInvocation changes 10 (+5 -5) score 0.02
     Product/7_EXE/E3553Ph/Common/RemoteMethodInvocation/Public/RemoteMethodInvocationMethodIds.hpp                          |   10 +-
 
-7_EXE E3553Ph/Common/RemotePeripherals | 2 +2,-0
+7_EXE/E3553Ph/Common/RemotePeripherals changes 2 (+2 -0) score 0.00
     Product/7_EXE/E3553Ph/Common/RemotePeripherals/Public/ConfigRemotePeripheralAssignment.hpp                              |    2 +
 
-7_EXE E360/BootLoader | 23 +23,-0
+7_EXE/E360/BootLoader changes 23 (+23 -0) score 0.04
     Product/7_EXE/E360/BootLoader/Sources/Hardware/ConfigInterruptDispatcher.cpp                                            |   23 ++
 
-7_EXE E360/Common/Config/App | 6 +4,-3
+7_EXE/E360/Common/Config/App changes 6 (+4 -3) score 0.01
     Product/7_EXE/E360/Common/Config/App/Public/ConfigFileIdentification.hpp                                                |    5 +-
     Product/7_EXE/E360/Common/Config/App/Public/ObsoleteStructs.hpp                                                         |    1 +
 
-7_EXE E360/Common/Config | 221 +182,-40
+7_EXE/E360/Common/Config changes 221 (+182 -40) score 0.44
     Product/7_EXE/E360/Common/Config/Public/BulkParameterConfig.hpp                                                         |   51 +++++
     Product/7_EXE/E360/Common/Config/Public/ConfigCaptureList.hpp                                                           |   40 ++++
     Product/7_EXE/E360/Common/Config/Public/ConfigDipSwellLimits.hpp                                                        |   27 +++
@@ -676,26 +676,26 @@
     Product/7_EXE/E360/Common/Config/Sources/ConfigClockUtility.cpp                                                         |   14 +-
     Product/7_EXE/E360/Common/Config/Sources/ConfigHardwareFunctionList.cpp                                                 |    4 +-
 
-7_EXE E360/Common/Config/TestApp | 1 +1,-0
+7_EXE/E360/Common/Config/TestApp changes 1 (+1 -0) score 0.00
     Product/7_EXE/E360/Common/Config/TestApp/Public/ConfigFileIdentification.hpp                                            |    1 +
 
-7_EXE E360/Common/Hardware | 106 +99,-7
+7_EXE/E360/Common/Hardware changes 106 (+99 -7) score 0.21
     Product/7_EXE/E360/Common/Hardware/Sources/rx65n/ConfigClockGenerator.cpp                                               |    6 +-
     Product/7_EXE/E360/Common/Hardware/Sources/rx66n/ConfigClockGenerator.cpp                                               |   92 ++++++++
     Product/7_EXE/E360/Common/Hardware/Sources/rx72n/ConfigClockGenerator.cpp                                               |    8 +-
 
-7_EXE E360/Module1/1_Phase/App | 4 +2,-2
+7_EXE/E360/Module1/1_Phase/App changes 4 (+2 -2) score 0.01
     Product/7_EXE/E360/Module1/1_Phase/App/Sources/ConfigModuleApplication.cpp                                              |    4 +-
 
-7_EXE E360/Module1/3_Phase/App* | 459 +230,-230
+7_EXE/E360/Module1/3_Phase/App* changes 459 (+230 -230) score 8.42
     Product/7_EXE/E360/Module1/3_Phase/App/Sources/ConfigMeasDataCalculation.cpp                                            |  121 +++++-----
     Product/7_EXE/E360/Module1/3_Phase/App/Sources/ConfigModuleApplication.cpp*                                             |  193 ++++++++--------
     Product/7_EXE/E360/Module1/3_Phase/App/Sources/ConfigModuleApplication.hpp*                                             |  145 ++++++------
 
-7_EXE E360/Module1/3_Phase | 48 +24,-24
+7_EXE/E360/Module1/3_Phase changes 48 (+24 -24) score 0.09
     Product/7_EXE/E360/Module1/3_Phase/Sources/PQInterfaceIEC.cpp                                                           |   48 ++--
 
-7_EXE E360/Module1/SCS/App/3_Phase* | 590 +284,-306
+7_EXE/E360/Module1/SCS/App/3_Phase* changes 590 (+284 -306) score 9.56
     Product/7_EXE/E360/Module1/SCS/App/3_Phase/Sources/ConfigDisconnectorEventLog.cpp                                       |  198 ++++++++++------
     Product/7_EXE/E360/Module1/SCS/App/3_Phase/Sources/ConfigDisconnectorEventlog.hpp                                       |    4 +-
     Product/7_EXE/E360/Module1/SCS/App/3_Phase/Sources/ConfigScsSingleActionScheduler.cpp                                   |   45 ++--
@@ -703,10 +703,10 @@
     Product/7_EXE/E360/Module1/SCS/App/3_Phase/Sources/ConfigSupplyControlSwitch.cpp*                                       |  307 ++++++++++---------------
     Product/7_EXE/E360/Module1/SCS/App/3_Phase/Sources/ConfigSupplyControlSwitch.hpp                                        |   28 +--
 
-7_EXE E360/Module1/SCS/None/3_Phase | 77 +44,-33
+7_EXE/E360/Module1/SCS/None/3_Phase changes 77 (+44 -33) score 0.15
     Product/7_EXE/E360/Module1/SCS/None/3_Phase/Sources/ConfigDisconnectorEventLog.cpp                                      |   77 ++++---
 
-7_EXE E360/Module1* | 4009 +2267,-1742
+7_EXE/E360/Module1* changes 4009 (+2267 -1742) score 37.67
     Product/7_EXE/E360/Module1/Sources/ConfigActivityCalendar.cpp                                                           |  381 +++++++++++++++---------------
     Product/7_EXE/E360/Module1/Sources/ConfigActivityCalendar.hpp                                                           |   18 +-
     Product/7_EXE/E360/Module1/Sources/ConfigActivityCalenderScheduler.cpp                                                  |  368 +++++++++++------------------
@@ -761,11 +761,11 @@
     Product/7_EXE/E360/Module1/Sources/ScriptTableScheduler.cpp                                                             |    4 +-
     Product/7_EXE/E360/Module1/Sources/module1_entry.cpp                                                                    |    5 +-
 
-7_EXE E360/Module2/1_Phase/App | 22 +11,-11
+7_EXE/E360/Module2/1_Phase/App changes 22 (+11 -11) score 0.04
     Product/7_EXE/E360/Module2/1_Phase/App/Sources/ConfigModuleApplication.cpp                                              |   17 +-
     Product/7_EXE/E360/Module2/1_Phase/App/Sources/ConfigModuleApplication.hpp                                              |    5 +-
 
-7_EXE E360/Module2/3_Phase/App | 2334 +1103,-1231
+7_EXE/E360/Module2/3_Phase/App changes 2334 (+1103 -1231) score 12.57
     Product/7_EXE/E360/Module2/3_Phase/App/Sources/ConfigAffectedPhaseStatusRegister.cpp                                    |  109 +++++----
     Product/7_EXE/E360/Module2/3_Phase/App/Sources/ConfigAffectedPhaseStatusRegister.hpp                                    |    2 +-
     Product/7_EXE/E360/Module2/3_Phase/App/Sources/ConfigCertifiedParameterEventInformation.cpp                             |   81 +++----
@@ -785,7 +785,7 @@
     Product/7_EXE/E360/Module2/3_Phase/App/Sources/PQInterfaceIEC.cpp                                                       |   86 +++----
     Product/7_EXE/E360/Module2/3_Phase/App/Sources/PQInterfaceIEC.hpp                                                       |    6 +-
 
-7_EXE E360/Module2/ConfigDigitalInput | 40 +19,-22
+7_EXE/E360/Module2/ConfigDigitalInput changes 40 (+19 -22) score 26.07
     Product/7_EXE/E360/Module2/ConfigDigitalInput/App/Sources/ConfigDigitalInput.cpp                                        |   12 +-
     Product/7_EXE/E360/Module2/ConfigDigitalInput/App/Sources/ConfigDigitalInput2.cpp                                       |    3 +-
     Product/7_EXE/E360/Module2/ConfigDigitalInput/App/Sources/ConfigPulseCounterRegister.cpp                                |   22 +-
@@ -793,7 +793,7 @@
     Product/7_EXE/E360/Module2/ConfigDigitalInput/None/Sources/ConfigDigitalInput2.cpp                                      |    1 -
     Product/7_EXE/E360/Module2/ConfigDigitalInput/None/Sources/ConfigPulseCounterRegister.cpp                               |    1 -
 
-7_EXE E360/Module2/ConfigMBus | 26 +23,-3
+7_EXE/E360/Module2/ConfigMBus changes 26 (+23 -3) score 0.05
     Product/7_EXE/E360/Module2/ConfigMBus/App/Public/ConfigMbusProfile.hpp                                                  |    3 +-
     Product/7_EXE/E360/Module2/ConfigMBus/App/Public/ConfigMbusProfile1.hpp                                                 |    2 +
     Product/7_EXE/E360/Module2/ConfigMBus/App/Public/ConfigMbusProfile2.hpp                                                 |    2 +
@@ -807,7 +807,7 @@
     Product/7_EXE/E360/Module2/ConfigMBus/None/Public/ConfigMbusProfile.hpp                                                 |    2 +
     Product/7_EXE/E360/Module2/ConfigMBus/None/Sources/ConfigMbusProfile.cpp                                                |    3 +-
 
-7_EXE E360/Module2* | 3477 +2118,-1359
+7_EXE/E360/Module2* changes 3477 (+2118 -1359) score 59.78
     Product/7_EXE/E360/Module2/Sources/ConfigApparentPowerThresholdRegister.cpp                                             |   13 +-
     Product/7_EXE/E360/Module2/Sources/ConfigApparentPowerThresholdRegister.hpp                                             |   13 +-
     Product/7_EXE/E360/Module2/Sources/ConfigAsyncPeriodicRamBackup.cpp                                                     |    3 +-
@@ -870,11 +870,11 @@
     Product/7_EXE/E360/Module2/Sources/InternalTemperatureBackgroundFunctor.cpp                                             |   13 +-
     Product/7_EXE/E360/Module2/Sources/module2_entry.cpp                                                                    |    5 +-
 
-7_EXE E360/Module3/1_Phase/App | 5 +3,-3
+7_EXE/E360/Module3/1_Phase/App changes 5 (+3 -3) score 0.01
     Product/7_EXE/E360/Module3/1_Phase/App/Sources/ConfigModemDefs.hpp                                                      |    2 +-
     Product/7_EXE/E360/Module3/1_Phase/App/Sources/ConfigModuleApplication.cpp                                              |    3 +-
 
-7_EXE E360/Module3/3_Phase/App* | 442 +202,-240
+7_EXE/E360/Module3/3_Phase/App* changes 442 (+202 -240) score 5.53
     Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModemDefs.hpp                                                      |    2 +-
     Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModemHttpsKeyImport.cpp                                            |   11 +-
     Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModemHttpsKeyImport.hpp                                            |    4 +-
@@ -882,7 +882,7 @@
     Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModuleApplication.cpp*                                             |  367 +++++++++++++----------------
     Product/7_EXE/E360/Module3/3_Phase/App/Sources/ConfigModuleApplication.hpp                                              |   47 ++--
 
-7_EXE E360/Module3/ConfigCII | 307 +188,-119
+7_EXE/E360/Module3/ConfigCII changes 307 (+188 -119) score 0.62
     Product/7_EXE/E360/Module3/ConfigCII/App/Public/ConfigCIIPushMessageConfiguration.hpp                                   |    5 +-
     Product/7_EXE/E360/Module3/ConfigCII/App/Public/ConfigCIIPushRemoteHandler.hpp                                          |   26 +++
     Product/7_EXE/E360/Module3/ConfigCII/App/Public/ConfigureCIIPort.hpp                                                    |   20 +-
@@ -894,7 +894,7 @@
     Product/7_EXE/E360/Module3/ConfigCII/None/Sources/ConfigCIIPushMessageConfiguration.cpp                                 |   14 +-
     Product/7_EXE/E360/Module3/ConfigCII/None/Sources/ConfigureCIIPort.cpp                                                  |   29 ++-
 
-7_EXE E360/Module3/ConfigMBus/ConfigMBusCommon | 788 +400,-388
+7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon changes 788 (+400 -388) score 1.58
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon/App/Sources/ConfigMBusClientChannel.cpp                          |  509 ++++++++++++++++++++--------------------
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon/App/Sources/ConfigMBusEventLog.cpp                               |   62 +++--
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon/App/Sources/ConfigMBusRegisterInstance.cpp                       |  193 ++++++++--------
@@ -905,21 +905,21 @@
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon/None/Sources/ConfigMBusEventLog.cpp                              |    5 +-
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusCommon/None/Sources/ConfigMBusInfrastructure.cpp                        |    3 +-
 
-7_EXE E360/Module3/ConfigMBus/ConfigMBusWired | 12 +6,-6
+7_EXE/E360/Module3/ConfigMBus/ConfigMBusWired changes 12 (+6 -6) score 0.02
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusWired/App/Sources/ConfigMBus.cpp                                        |   12 +-
 
-7_EXE E360/Module3/ConfigMBus/ConfigMBusWireless | 102 +46,-56
+7_EXE/E360/Module3/ConfigMBus/ConfigMBusWireless changes 102 (+46 -56) score 1.94
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusWireless/App/Sources/ConfigWMBus.cpp                                    |   54 ++---
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusWireless/None/Public/ConfigWMBus.hpp                                    |   45 ++--
     Product/7_EXE/E360/Module3/ConfigMBus/ConfigMBusWireless/None/Sources/ConfigWMBus.cpp                                   |    3 +-
 
-7_EXE E360/Module3/ConfigOpticalPortControl | 50 +25,-25
+7_EXE/E360/Module3/ConfigOpticalPortControl changes 50 (+25 -25) score 0.10
     Product/7_EXE/E360/Module3/ConfigOpticalPortControl/App/Public/ConfigOpticalPortControl.hpp                             |    8 +-
     Product/7_EXE/E360/Module3/ConfigOpticalPortControl/App/Sources/ConfigOpticalPortControl.cpp                            |   25 +-
     Product/7_EXE/E360/Module3/ConfigOpticalPortControl/None/Public/ConfigOpticalPortControl.hpp                            |    6 +-
     Product/7_EXE/E360/Module3/ConfigOpticalPortControl/None/Sources/ConfigOpticalPortControl.cpp                           |   11 +-
 
-7_EXE E360/Module3* | 7454 +4229,-3225
+7_EXE/E360/Module3* changes 7454 (+4229 -3225) score 51.83
     Product/7_EXE/E360/Module3/Sources/ConfigAesGsmObject.hpp                                                               |   51 +++++
     Product/7_EXE/E360/Module3/Sources/ConfigAlarmMonitor.cpp                                                               |  186 +++++++--------
     Product/7_EXE/E360/Module3/Sources/ConfigAlarmMonitor.hpp                                                               |    9 +-
@@ -1010,25 +1010,25 @@
     Product/7_EXE/E360/Module3/Sources/DlmsClientSetting.hpp                                                                |   10 +-
     Product/7_EXE/E360/Module3/Sources/module3_entry.cpp                                                                    |    2 +
 
-7_EXE E360/System/1_Phase/App | 25 +13,-13
+7_EXE/E360/System/1_Phase/App changes 25 (+13 -13) score 0.05
     Product/7_EXE/E360/System/1_Phase/App/Sources/ConfigPulseOutputs.cpp                                                    |    3 +-
     Product/7_EXE/E360/System/1_Phase/App/Sources/ConfigTamperDetection.cpp                                                 |    5 +-
     Product/7_EXE/E360/System/1_Phase/App/Sources/ConfigureServices.cpp                                                     |    3 +-
     Product/7_EXE/E360/System/1_Phase/App/Sources/CosemMmi3MeasurementSystemParameters.cpp                                  |    3 +-
     Product/7_EXE/E360/System/1_Phase/App/Sources/MultiModuleSystemApplication.cpp                                          |   11 +-
 
-7_EXE E360/System/1_Phase | 11 +6,-6
+7_EXE/E360/System/1_Phase changes 11 (+6 -6) score 0.02
     Product/7_EXE/E360/System/1_Phase/Sources/ConfigCosemAccessManualSystem.hpp                                             |    2 +-
     Product/7_EXE/E360/System/1_Phase/Sources/ConfigMmi3.cpp                                                                |    3 +-
     Product/7_EXE/E360/System/1_Phase/Sources/ConfigProductionDataAccess.cpp                                                |    3 +-
     Product/7_EXE/E360/System/1_Phase/Sources/ConfigureUarts.cpp                                                            |    3 +-
 
-7_EXE E360/System/1_Phase/TestApp | 18 +9,-9
+7_EXE/E360/System/1_Phase/TestApp changes 18 (+9 -9) score 0.03
     Product/7_EXE/E360/System/1_Phase/TestApp/Sources/ConfigModem.cpp                                                       |    2 +-
     Product/7_EXE/E360/System/1_Phase/TestApp/Sources/ConfigureServices.cpp                                                 |    3 +-
     Product/7_EXE/E360/System/1_Phase/TestApp/Sources/MultiModuleSystemApplication.cpp                                      |   13 +-
 
-7_EXE E360/System/3_Phase/App/S1* | 858 +469,-389
+7_EXE/E360/System/3_Phase/App/S1* changes 858 (+469 -389) score 5.47
     Product/7_EXE/E360/System/3_Phase/App/S1/Sources/ConfigIMS1Hardware.cpp                                                 |   68 +++---
     Product/7_EXE/E360/System/3_Phase/App/S1/Sources/ConfigIMS1Hardware.hpp                                                 |    6 +
     Product/7_EXE/E360/System/3_Phase/App/S1/Sources/ConfigIms1.cpp                                                         |  204 +++++++++--------
@@ -1036,14 +1036,14 @@
     Product/7_EXE/E360/System/3_Phase/App/S1/Sources/ConfigMeasurementDataProcessing.cpp                                    |   76 +++---
     Product/7_EXE/E360/System/3_Phase/App/S1/Sources/ConfigProductionDataAccess.cpp                                         |   90 ++++----
 
-7_EXE E360/System/3_Phase/App/S2 | 285 +143,-143
+7_EXE/E360/System/3_Phase/App/S2 changes 285 (+143 -143) score 0.57
     Product/7_EXE/E360/System/3_Phase/App/S2/Sources/ConfigIms2.cpp                                                         |   96 ++++----
     Product/7_EXE/E360/System/3_Phase/App/S2/Sources/ConfigIms2Hardware.cpp                                                 |   48 ++--
     Product/7_EXE/E360/System/3_Phase/App/S2/Sources/ConfigMeasDataCalculation.cpp                                          |   94 ++++----
     Product/7_EXE/E360/System/3_Phase/App/S2/Sources/ConfigMeasurementDataProcessing.cpp                                    |   42 ++--
     Product/7_EXE/E360/System/3_Phase/App/S2/Sources/ConfigProductionDataAccess.cpp                                         |    5 +-
 
-7_EXE E360/System/3_Phase/App | 1051 +677,-374
+7_EXE/E360/System/3_Phase/App changes 1051 (+677 -374) score 9.29
     Product/7_EXE/E360/System/3_Phase/App/Sources/ConfigDigitalInput.cpp                                                    |    3 +-
     Product/7_EXE/E360/System/3_Phase/App/Sources/ConfigDigitalInput.hpp                                                    |    1 +
     Product/7_EXE/E360/System/3_Phase/App/Sources/ConfigDisplayRegister.cpp                                                 |   59 ++---
@@ -1064,7 +1064,7 @@
     Product/7_EXE/E360/System/3_Phase/App/Sources/PulseOutputTimer.hpp                                                      |   39 ++++
     Product/7_EXE/E360/System/3_Phase/App/Sources/main.cpp                                                                  |   77 ++-----
 
-7_EXE E360/System/3_Phase* | 48 +27,-21
+7_EXE/E360/System/3_Phase* changes 48 (+27 -21) score 3.84
     Product/7_EXE/E360/System/3_Phase/Sources/ConfigCosemAccessManualSystem.hpp                                             |    5 +-
     Product/7_EXE/E360/System/3_Phase/Sources/ConfigModemCommon.cpp*                                                        |    7 +-
     Product/7_EXE/E360/System/3_Phase/Sources/ConfigureGpios1Ph.cpp                                                         |    2 +
@@ -1073,7 +1073,7 @@
     Product/7_EXE/E360/System/3_Phase/Sources/ConfigureUarts.cpp                                                            |   16 +-
     Product/7_EXE/E360/System/3_Phase/Sources/ConfigureUarts.hpp                                                            |   14 +-
 
-7_EXE E360/System/3_Phase/TestApp* | 1939 +1321,-618
+7_EXE/E360/System/3_Phase/TestApp* changes 1939 (+1321 -618) score 28.14
     Product/7_EXE/E360/System/3_Phase/TestApp/Sources/ConfigIMS1CalibrationParametersUpdate.cpp*                            |   89 ++++---
     Product/7_EXE/E360/System/3_Phase/TestApp/Sources/ConfigIMS1Hardware.cpp                                                |  244 +++++++-------------
     Product/7_EXE/E360/System/3_Phase/TestApp/Sources/ConfigIMS1Hardware.hpp                                                |   34 +--
@@ -1094,7 +1094,7 @@
     Product/7_EXE/E360/System/3_Phase/TestApp/Sources/MultiModuleSystemApplication.hpp                                      |   10 +
     Product/7_EXE/E360/System/3_Phase/TestApp/Sources/main.cpp                                                              |    5 +-
 
-7_EXE E360/System/3_Phase/TestAppS2 | 246 +114,-132
+7_EXE/E360/System/3_Phase/TestAppS2 changes 246 (+114 -132) score 11.85
     Product/7_EXE/E360/System/3_Phase/TestAppS2/Sources/ConfigIms2Hardware.cpp                                              |   51 ++---
     Product/7_EXE/E360/System/3_Phase/TestAppS2/Sources/ConfigMeasDataCalculation.cpp                                       |  107 ++++-----
     Product/7_EXE/E360/System/3_Phase/TestAppS2/Sources/ConfigMeasurementDataProcessing.cpp                                 |   46 ++--
@@ -1113,7 +1113,7 @@
     Product/7_EXE/E360/System/3_Phase/TestAppS2/Sources/PowerSupplySupervision/ConfigurePowerSupplySupervisionMainsLgHw.cpp |    1 -
     Product/7_EXE/E360/System/3_Phase/TestAppS2/Sources/PowerSupplySupervision/ConfigurePowerSupplySupervisionMainsLyHw.cpp |    4 +-
 
-7_EXE E360/System/App* | 3260 +1783,-1477
+7_EXE/E360/System/App* changes 3260 (+1783 -1477) score 32.44
     Product/7_EXE/E360/System/App/Sources/CallstackSystem.cpp                                                               |   15 +-
     Product/7_EXE/E360/System/App/Sources/ConfigBatteryStatus.cpp                                                           |   20 +-
     Product/7_EXE/E360/System/App/Sources/ConfigCalibrationDate.cpp                                                         |   26 ++-
@@ -1174,12 +1174,12 @@
     Product/7_EXE/E360/System/App/Sources/MultiModuleSystemApplicationApp.cpp                                               |  232 ++++++++++++-------
     Product/7_EXE/E360/System/App/Sources/MultiModuleSystemApplicationApp.hpp                                               |   47 ++--
 
-7_EXE E360/System/ConfigControlInput | 70 +29,-41
+7_EXE/E360/System/ConfigControlInput changes 70 (+29 -41) score 3.03
     Product/7_EXE/E360/System/ConfigControlInput/App/Public/ConfigInitializeControlInput.hpp                                |   17 +-
     Product/7_EXE/E360/System/ConfigControlInput/App/Sources/ConfigInitializeControlInput.cpp                               |   34 +--
     Product/7_EXE/E360/System/ConfigControlInput/None/Public/ConfigInitializeControlInput.hpp                               |   19 +-
 
-7_EXE E360/System/ConfigDigitalInput | 184 +97,-87
+7_EXE/E360/System/ConfigDigitalInput changes 184 (+97 -87) score 3.26
     Product/7_EXE/E360/System/ConfigDigitalInput/App/Public/ConfigInitializeDigitalInput.hpp                                |   25 +-
     Product/7_EXE/E360/System/ConfigDigitalInput/App/Public/DigitalInputDisplayNavEventHandler.hpp                          |   18 +-
     Product/7_EXE/E360/System/ConfigDigitalInput/App/Sources/ConfigInitializeDigitalInput.cpp                               |   54 +++--
@@ -1188,7 +1188,7 @@
     Product/7_EXE/E360/System/ConfigDigitalInput/None/Public/DigitalInputDisplayNavEventHandler.hpp                         |    4 +-
     Product/7_EXE/E360/System/ConfigDigitalInput/None/Sources/ConfigInitializeDigitalInput.cpp                              |   24 +-
 
-7_EXE E360/System/ConfigMBus/ConfigMBusCommon | 150 +76,-74
+7_EXE/E360/System/ConfigMBus/ConfigMBusCommon changes 150 (+76 -74) score 0.30
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusCommon/App/Public/ConfigCosemAccessManualSystem.hpp                      |    2 +-
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusCommon/App/Sources/ConfigWMBusDisplayLists.cpp                           |  117 +++++-----
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusCommon/App/Sources/CosemOperatingDisplayListParameters.cpp               |   16 +-
@@ -1196,10 +1196,10 @@
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusCommon/AppS1/Sources/ConfigWMBusDisplayLists.cpp                         |    2 +
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusCommon/AppS1/Sources/CosemOperatingDisplayListParameters.cpp             |   11 +-
 
-7_EXE E360/System/ConfigMBus/ConfigMBusWired | 1 +1,-0
+7_EXE/E360/System/ConfigMBus/ConfigMBusWired changes 1 (+1 -0) score 0.00
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWired/App/Sources/ConfigMBus.cpp                                         |    1 +
 
-7_EXE E360/System/ConfigMBus/ConfigMBusWireless | 128 +59,-69
+7_EXE/E360/System/ConfigMBus/ConfigMBusWireless changes 128 (+59 -69) score 1.22
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWireless/App/Public/ConfigWMBus.hpp                                      |    2 +
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWireless/App/Sources/ConfigWMBus.cpp                                     |    5 +-
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWireless/App/Sources/ConfigWMBusDisplayLists.cpp                         |  114 ++++-----
@@ -1207,18 +1207,18 @@
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWireless/None/Sources/ConfigWMBus.cpp                                    |    3 +-
     Product/7_EXE/E360/System/ConfigMBus/ConfigMBusWireless/None/Sources/ConfigWMBusDisplayLists.cpp                        |    1 +
 
-7_EXE E360/System/ConfigPowerSupplySupervision | 39 +20,-19
+7_EXE/E360/System/ConfigPowerSupplySupervision changes 39 (+20 -19) score 8.74
     Product/7_EXE/E360/System/ConfigPowerSupplySupervision/App/LG/Sources/PowerSupplySupervisionE360.cpp                    |    1 -
     Product/7_EXE/E360/System/ConfigPowerSupplySupervision/Common/Public/PowerSupplySupervisionE360.hpp                     |    4 +-
     Product/7_EXE/E360/System/ConfigPowerSupplySupervision/Common/Sources/ConfigurePowerSupplySupervisionADC.cpp            |    2 +
     Product/7_EXE/E360/System/ConfigPowerSupplySupervision/Common/Sources/PowerSupplySupervisionE360.cpp                    |   16 +-
     Product/7_EXE/E360/System/ConfigPowerSupplySupervision/TestApp/LG/Sources/PowerSupplySupervisionE360.cpp                |   16 +-
 
-7_EXE E360/System/ConfigureLpc | 5 +3,-2
+7_EXE/E360/System/ConfigureLpc changes 5 (+3 -2) score 0.01
     Product/7_EXE/E360/System/ConfigureLpc/Common/Sources/ConfigureLpcCommon.cpp                                            |    4 +-
     Product/7_EXE/E360/System/ConfigureLpc/TestApp/Sources/ConfigureLpc.cpp                                                 |    1 +
 
-7_EXE E360/System | 1103 +742,-361
+7_EXE/E360/System changes 1103 (+742 -361) score 18.58
     Product/7_EXE/E360/System/Sources/ConfigCertifiedParameterChecksum.cpp                                                  |    4 +-
     Product/7_EXE/E360/System/Sources/ConfigClockLockoutStatusHandler.cpp                                                   |    2 +-
     Product/7_EXE/E360/System/Sources/ConfigClockLockoutStatusHandler.hpp                                                   |    2 +-
@@ -1250,7 +1250,7 @@
     Product/7_EXE/E360/System/Sources/TimeSystem/ConfigClock.cpp                                                            |   63 +++--
     Product/7_EXE/E360/System/Sources/TimeSystem/ConfigClock.hpp                                                            |    3 +-
 
-7_EXE E360/System/TestApp* | 2123 +1279,-844
+7_EXE/E360/System/TestApp* changes 2123 (+1279 -844) score 17.86
     Product/7_EXE/E360/System/TestApp/Sources/ConfigClockBaseSelector.cpp                                                   |    7 +-
     Product/7_EXE/E360/System/TestApp/Sources/ConfigDisplayLists.cpp                                                        |  478 ++++++++++++++++++--------------------
     Product/7_EXE/E360/System/TestApp/Sources/ConfigDisplayLists.hpp                                                        |    2 +-
@@ -1272,6 +1272,6 @@
     Product/7_EXE/E360/System/TestApp/Sources/MultiModuleSystemApplicationTestApp.cpp                                       |  127 +++++-----
     Product/7_EXE/E360/System/TestApp/Sources/MultiModuleSystemApplicationTestApp.hpp*                                      |   33 ++-
 
-7_EXE E360APCT/Common/RemotePeripherals | 4 +2,-2
+7_EXE/E360APCT/Common/RemotePeripherals changes 4 (+2 -2) score 0.01
     Product/7_EXE/E360APCT/Common/RemotePeripherals/Public/ConfigRemotePeripheralAssignment.hpp                             |    4 +-
 
