@@ -4,7 +4,7 @@ Analysis code changes since (including) Picasso-4 upgrading.
 
 ## Overview Of Changed Source Code
 
-### Code changes vs functionality
+### Code changes vs size of change
 
 ![](function-changes-summary.png?raw=true)
 
