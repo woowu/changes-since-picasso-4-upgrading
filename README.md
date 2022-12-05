@@ -14,7 +14,7 @@ Higher score functional changes need pay more attentions or be assigned for revi
 
 ![](function-changes-rating.png?raw=true)
 
-[Excel Sheet](function-changes-rating.xlsx)
+Download [Excel Sheet](blob/main/function-changes-rating.xlsx) for create review assignment.
 
 Each changed function module is assigned a score which is calculated based on the following rules:
 
