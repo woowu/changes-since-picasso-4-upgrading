@@ -2,9 +2,12 @@
 import fs from 'fs'
 import path from 'path'
 import util from 'util';
+import writeXlsFile from 'write-excel-file/node';
 import { EventEmitter } from 'events';
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
+
+/*---------------------------------------------------------------------------*/
 
 /**
  * Map values in the domain to values in the range.
@@ -25,6 +28,8 @@ function LinearScale(domain, range) {
 LinearScale.prototype.map = function(x) {
     return (x - this._x0) * this._m;
 }
+
+/*---------------------------------------------------------------------------*/
 
 function File(filename, module, nChanges, plus, minus, hasTodo, diffLine) {
     this.filename = filename;
@@ -48,8 +53,11 @@ File.prototype.getNetDeletionRatio = function() {
 
 function Module(name) {
     this.name = name;
+    this.hasInnerModule = false;
     this.files = [];
 }
+
+/*---------------------------------------------------------------------------*/
 
 Module.prototype.appendDiffFile = function(file) {
     this.files.push(file);
@@ -90,6 +98,8 @@ Module.prototype.getNetDeletionRatio = function() {
     return this.files.reduce((acc, curr) => acc + curr.getNetDeletionRatio(), 0);
 };
 
+/*---------------------------------------------------------------------------*/
+
 function ModuleList() {
     this.modules = [] ;
     this._activeModule = null;
@@ -123,14 +133,23 @@ ModuleList.prototype.end = function() {
             + changesScale.map(m.getChangesSum().nChanges);
     }
     for (const m of this.modules) {
-        const { nChanges, plus, minus } = m.getChangesSum();
-        console.log(m.name,
-            m.getNumberOfTodos(),
-            m.getNetDeletionRatio().toFixed(2),
-            m.getChangesSum().nChanges,
-            m.score.toFixed(2)
-        );
+        for (const x of this.modules) {
+            if (x.name != m.name && x.name.search(m.name) == 0) {
+                m.hasInnerModule = true;
+                break;
+            }
+        }
     }
+    
+    //for (const m of this.modules) {
+    //    const { nChanges, plus, minus } = m.getChangesSum();
+    //    console.log(m.name,
+    //        m.getNumberOfTodos(),
+    //        m.getNetDeletionRatio().toFixed(2),
+    //        m.getChangesSum().nChanges,
+    //        m.score.toFixed(2)
+    //    );
+    //}
 };
 
 /**
@@ -172,6 +191,8 @@ ModuleList.prototype._getModulesChangesExtend = function() {
     }
     return [min, max];
 };
+
+/*---------------------------------------------------------------------------*/
 
 function DiffFileParser() {
     EventEmitter.call(this);
@@ -265,6 +286,8 @@ DiffFileParser.prototype._processDiffLine = function(diffLine) {
     ));
 };
 
+/*---------------------------------------------------------------------------*/
+
 function ModulesDetailReporter(filename) {
     this._filename = filename;
 }
@@ -293,6 +316,8 @@ ModulesDetailReporter.prototype.run = function(modules) {
     ws.end();
 }
 
+/*---------------------------------------------------------------------------*/
+
 function ModulesSummaryReporter(filename) {
     this._filename = filename;
 }
@@ -310,6 +335,95 @@ ModulesSummaryReporter.prototype.run = function(modules) {
     ws.end();
 }
 
+/*---------------------------------------------------------------------------*/
+
+function createSummarySheet(modules) {
+    const objects = [];
+    const schema = [
+        {
+            column: 'Layer',
+            type: String,
+            value: o => o.layer,
+            width: 8,
+        },
+        {
+            column: 'Name',
+            type: String,
+            value: o => o.name,
+            width: 40,
+        },
+        {
+            column: 'Changes',
+            type: Number,
+            align: 'right',
+            value: o => o.nChanges,
+        },
+        {
+            column: 'Added',
+            type: Number,
+            align: 'right',
+            value: o => o.plus,
+        },
+        {
+            column: 'Deleted',
+            type: Number,
+            align: 'right',
+            value: o => o.minus,
+        },
+        {
+            column: 'Todo',
+            type: Boolean,
+            align: 'right',
+            value: o => o.todo,
+        },
+        {
+            column: 'Score',
+            type: Number,
+            align: 'right',
+            value: o => +o.score.toFixed(2),
+        },
+    ];
+
+    for (const m of modules.modules) {
+        const { nChanges, plus, minus } = m.getChangesSum();
+        objects.push({
+            layer: m.name.split('/')[0],
+            name: m.name.split('/').slice(1).join('/')
+                + (m.hasInnerModule ? ' ...' : ''),
+            nChanges,
+            plus,
+            minus,
+            todo: m.hasTodo(),
+            score: m.score,
+        });
+    }
+    objects.sort((a, b) => b.score - a.score);
+
+    return { name: 'Summary', objects, schema };
+}
+
+function ExcelReporter(filename) {
+    this._filename = filename;
+}
+
+ExcelReporter.prototype.run = function(modules) {
+    const summarySheet = createSummarySheet(modules);
+    writeXlsFile(summarySheet.objects, {
+        schema: summarySheet.schema,
+        sheet: summarySheet.name,
+        stickyRowsCount: 1,
+        headerStyle: {
+            backgroundColor: '#eeeeee',
+            fontWeight: 'bold',
+            fontSize: 12,
+            height: 30,
+        },
+        filePath: this._filename,
+    });
+};
+
+/*---------------------------------------------------------------------------*/
+
 const argv = yargs(hideBin(process.argv))
     .usage('$0 [options]')
     .version('0.0.2')
@@ -323,8 +437,10 @@ const argv = yargs(hideBin(process.argv))
     const report = function() {
         const mdr = new ModulesDetailReporter('changes-detail.txt');
         const msr = new ModulesSummaryReporter('changes-functional-summary.csv');
+        const exr = new ExcelReporter('changes-report.xlsx');
         mdr.run(modules);
         msr.run(modules);
+        exr.run(modules);
     }
 
     fileParser.on('file', file => {
