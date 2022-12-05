@@ -60,6 +60,8 @@ function Module(name) {
 /*---------------------------------------------------------------------------*/
 
 Module.prototype.appendDiffFile = function(file) {
+    file.filename = file.filename.split('/').slice(1).join('/')
+        .slice(this.name.length + 1);
     this.files.push(file);
 };
 
@@ -337,9 +339,52 @@ ModulesSummaryReporter.prototype.run = function(modules) {
 
 /*---------------------------------------------------------------------------*/
 
-function createSummarySheet(modules) {
+function ExcelReporter(filename) {
+    this._filename = filename;
+}
+
+ExcelReporter.prototype.run = function(modules) {
+    const summarySheet = this._createSummarySheet(modules);
+    const fileListSheets = [];
+
+    for (const m of modules.modules)
+        fileListSheets.push(this._createFileListSheet(m));
+
+    const allNames = [summarySheet.name];
+    const allObjects = [summarySheet.objects];
+    const allSchema = [summarySheet.schema];
+    for (const s of fileListSheets) {
+        allNames.push(s.name.split('/').join('.'));
+        allObjects.push(s.objects);
+        allSchema.push(s.schema);
+    }
+
+    /* For unknown reason, the write-xls-file cannot generate
+     * multi-sheets.
+     */
+    writeXlsFile(allObjects[0], {
+        schema: allSchema[0],
+        sheet: allNames[0],
+        stickyRowsCount: 1,
+        headerStyle: {
+            backgroundColor: '#eeeeee',
+            fontWeight: 'bold',
+            fontSize: 12,
+            height: 30,
+        },
+        filePath: this._filename,
+    });
+};
+
+ExcelReporter.prototype._createSummarySheet = function(modules) {
     const objects = [];
     const schema = [
+        {
+            column: 'Index',
+            type: Number,
+            value: o => o.index,
+            align: 'right',
+        },
         {
             column: 'Layer',
             type: String,
@@ -350,6 +395,12 @@ function createSummarySheet(modules) {
             column: 'Name',
             type: String,
             value: o => o.name,
+            width: 40,
+        },
+        {
+            column: 'Inner Modules',
+            type: String,
+            value: o => o.innerModules,
             width: 40,
         },
         {
@@ -384,12 +435,32 @@ function createSummarySheet(modules) {
         },
     ];
 
-    for (const m of modules.modules) {
+    const ms = [];
+    for (const m of modules.modules)
+        ms.push(m);
+    ms.sort((a, b) => b.score - a.score);
+    var i = 1;
+    for (const m of ms) {
+        m.index = i;
+        m.innerModules = [];
+        ++i;
+    }
+    for (const m of ms) {
+        for (const x of ms) {
+            if (x.index != m.index && x.name.search(m.name) == 0) {
+                m.innerModules.push(x.index);
+            }
+        }
+    }
+
+    for (const m of ms) {
         const { nChanges, plus, minus } = m.getChangesSum();
         objects.push({
+            index: m.index,
             layer: m.name.split('/')[0],
             name: m.name.split('/').slice(1).join('/')
-                + (m.hasInnerModule ? ' ...' : ''),
+                /*+ (m.hasInnerModule ? ' ...' : '')*/,
+            innerModules: m.innerModules.join(','),
             nChanges,
             plus,
             minus,
@@ -397,29 +468,58 @@ function createSummarySheet(modules) {
             score: m.score,
         });
     }
-    objects.sort((a, b) => b.score - a.score);
 
     return { name: 'Summary', objects, schema };
-}
+};
 
-function ExcelReporter(filename) {
-    this._filename = filename;
-}
-
-ExcelReporter.prototype.run = function(modules) {
-    const summarySheet = createSummarySheet(modules);
-    writeXlsFile(summarySheet.objects, {
-        schema: summarySheet.schema,
-        sheet: summarySheet.name,
-        stickyRowsCount: 1,
-        headerStyle: {
-            backgroundColor: '#eeeeee',
-            fontWeight: 'bold',
-            fontSize: 12,
-            height: 30,
+ExcelReporter.prototype._createFileListSheet = function(module) {
+    const objects = [];
+    const schema = [
+        {
+            column: 'File',
+            type: String,
+            value: o => o.filename,
+            width: 60,
         },
-        filePath: this._filename,
-    });
+        /*
+        {
+            column: 'Changes',
+            type: Number,
+            align: 'right',
+            value: o => o.nChanges,
+        },
+        {
+            column: 'Added',
+            type: Number,
+            align: 'right',
+            value: o => o.plus,
+        },
+        {
+            column: 'Deleted',
+            type: Number,
+            align: 'right',
+            value: o => o.minus,
+        },
+        {
+            column: 'Todo',
+            type: Boolean,
+            align: 'right',
+            value: o => o.todo,
+        },
+        */
+    ];
+
+    for (const f of module.files) {
+        objects.push({
+            filename: f.filename,
+            nChanges: f.nChanges,
+            plus: f.plus,
+            minus: f.minus,
+            todo: f.hasTodo,
+        });
+    }
+
+    return { name: module.name, objects, schema };
 };
 
 /*---------------------------------------------------------------------------*/
