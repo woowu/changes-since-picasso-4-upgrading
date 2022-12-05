@@ -6,7 +6,21 @@ Analysis code changes since (including) Picasso-4 upgrading.
 
 ### Code changes vs functionality
 
-![](changes-functional-summary.png?raw=true)
+![](function-changes-summary.png?raw=true)
+
+### Code changes rating
+
+Higher score functional changes need pay more attentions or be assigned for reviewing in higher priorities.
+
+![](function-changes-rating.png?raw=true)
+
+[Excel Sheet](function-changes-rating.xlsx)
+
+Each changed function module is assigned a score which is calculated based on the following rules:
+
+- Changes of a function containing more files which have TODO marks gets higher score than those containing less TODO files.  - Weight 45/100
+- Changes of a function which has more deletion than addition gets higher score. - Weight 40/100
+- Changes of a function which has greater code size of change gets higher score. - Weight 15/100
 
 ### Change details regarding to changed files
 

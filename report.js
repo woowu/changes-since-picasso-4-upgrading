@@ -536,8 +536,8 @@ const argv = yargs(hideBin(process.argv))
 
     const report = function() {
         const mdr = new ModulesDetailReporter('changes-detail.txt');
-        const msr = new ModulesSummaryReporter('changes-functional-summary.csv');
-        const exr = new ExcelReporter('changes-report.xlsx');
+        const msr = new ModulesSummaryReporter('function-changes-summary.csv');
+        const exr = new ExcelReporter('function-changes-rating.xlsx');
         mdr.run(modules);
         msr.run(modules);
         exr.run(modules);
