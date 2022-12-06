@@ -481,7 +481,6 @@ ExcelReporter.prototype._createFileListSheet = function(module) {
             value: o => o.filename,
             width: 60,
         },
-        /*
         {
             column: 'Changes',
             type: Number,
@@ -506,7 +505,6 @@ ExcelReporter.prototype._createFileListSheet = function(module) {
             align: 'right',
             value: o => o.todo,
         },
-        */
     ];
 
     for (const f of module.files) {
