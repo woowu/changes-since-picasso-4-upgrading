@@ -10,7 +10,7 @@ Analysis code changes since (including) Picasso-4 upgrading.
 
 ### Code changes rating
 
-Higher score functional changes need pay more attentions or be assigned for reviewing in higher priorities.
+Higher score functional changes need pay more attentions or be assigned for reviewing with higher priorities.
 
 ![](function-changes-rating.png?raw=true)
 
