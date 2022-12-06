@@ -18,7 +18,7 @@ Download [Excel Sheet](function-changes-rating.xlsx) for create review assignmen
 
 Each changed function module is assigned a score which is calculated based on the following rules:
 
-- Changes of a function containing more files which have TODO marks gets higher score than those containing less TODO files.  - Weight 45/100
+- Changes of a function containing more files having TODO marks gets higher score than those containing less TODO files.  - Weight 45/100
 - Changes of a function which has more deletion than addition gets higher score. - Weight 40/100
 - Changes of a function which has greater code size of change gets higher score. - Weight 15/100
 
